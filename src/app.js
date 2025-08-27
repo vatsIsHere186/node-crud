@@ -9,6 +9,11 @@ app.use(express.json());
 let todos = [];
 let nextId = 1;
 
+// normal router for sending normal html to home url
+app.get("/", (req, res) => {
+  res.send("<h1>Welcome to the Todo API</h1>");
+});
+
 // Create
 app.post("/todos", (req, res) => {
   const { title = "", done = false } = req.body || {};
